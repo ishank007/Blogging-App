@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel='stylesheet' type='text/css'  href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css'>
+		<link rel='stylesheet' type='text/css'  href='/stylesheets/app.css'>
+		
+		
+	</head>
+<body>
+	<div class='ui fixed inverted menu navbar'>
+		<div class='ui container'>
+			<div class='header item'><i class='icon code'></i><a href='/'>Blog App</a></div>
+			<a href='/' class=item>Home</a>
+			<a href='/blogs/new' class=item>New</a>
+			<div class='right menu'>
+				<!--if no user then show register and login only else show logout 					 -->
+					<% if(!currentuser){%>
+		       			<a class='item'href="/register">Sign Up</a>
+		       			<a class='item'href="/login">Login</a>
+					<% }else{%>
+						<a class='item'>SignedIn As <%=currentuser.username%></a>
+						<a class='item'href='/logout'>Log Out</a>
+					<% }%>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class='container'>
+			<%if(error && error.length>0){%>
+				<div class="ui negative message">
+				  <div class="header">
+					<%=error%>
+				  </div>
+				</div>
+			<%}%>
+			<%if(success && success.length>0){%>
+				<div class="ui success message">
+				  <div class="header">
+					<%=success%>
+				  </div>
+				</div>
+			<%}%>
+		</div>
