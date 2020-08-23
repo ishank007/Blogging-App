@@ -22,7 +22,7 @@ var Authroutes=require('./Routes/Auth');
 
 
 //APP config
-//local db :  'mongodb://localhost:27017/blog_app'
+//local db :  
 mongoose.connect('mongodb+srv://ishank:fuckinggmail@cluster0.gubwx.mongodb.net/dbnameblog?retryWrites=true&w=majority',{ useNewUrlParser: true,useUnifiedTopology: true });
 app.set('view engine' ,'ejs');
 app.use(express.static('public'));
