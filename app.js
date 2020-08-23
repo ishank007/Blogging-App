@@ -23,7 +23,7 @@ var Authroutes=require('./Routes/Auth');
 
 //APP config
 //local db :  'mongodb://localhost:27017/blog_app'
-mongoose.connect('mongodb+srv://ishank:fuckinggmail@cluster0.gubwx.mongodb.net/dbblogapp1.0?retryWrites=true&w=majority',{ useNewUrlParser: true,useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://ishank:fuckinggmail@cluster0.gubwx.mongodb.net/dbnameblog?retryWrites=true&w=majority',{ useNewUrlParser: true,useUnifiedTopology: true });
 app.set('view engine' ,'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }))
