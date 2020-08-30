@@ -20,10 +20,10 @@ var Blogroutes=require('./Routes/Blog');
 var Authroutes=require('./Routes/Auth');
 
 
-
 //APP config
-//local db :  
-mongoose.connect('mongodb+srv://ishank:fuckinggmail@cluster0.gubwx.mongodb.net/dbnameblog?retryWrites=true&w=majority',{ useNewUrlParser: true,useUnifiedTopology: true });
+mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser: true,useUnifiedTopology: true });
+//local db :  ('mongodb://localhost/blog_app',{ useNewUrlParser: true,useUnifiedTopology: true })
+
 app.set('view engine' ,'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }))
